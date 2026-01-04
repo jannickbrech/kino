@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kino</title>
+    <link rel="stylesheet" href="bundle.css">
+</head>
+
+<body>
+    <header>
+        <h1>Kino</h1>
+    </header>
+
+    <main>
+        <div id="role-selection">
+            <h2>Bitte wählen Sie Ihre Rolle:</h2>
+            <div class="button-group">
+                <button id="betreiber-button" class="role-button">Betreiber</button>
+                <button id="kunde-button" class="role-button">Kunde</button>
+            </div>
+        </div>
+
+        <div id="content-area" class="hidden">
+            <button id="back-button">&larr; Zurück zur Auswahl</button>
+            <h2 id="area-title">Bereich</h2>
+
+            <div id="betreiber-controls" class="hidden">
+                <h3>Neuen Kinosaal anlegen</h3>
+                <form id="form-kinosaal">
+                    <div>
+                        <label>Name des Saals:</label>
+                        <input type="text" name="name" required placeholder="z.B. Saal 1">
+                    </div>
+                    <div>
+                        <label>Anzahl Sitzreihen:</label>
+                        <input type="number" name="reihen" required min="1" value="5">
+                    </div>
+                    <div>
+                        <label>Sitze pro Reihe:</label>
+                        <input type="number" name="sitzeProReihe" required min="1" value="8">
+                    </div>
+                    <button type="submit">Saal speichern</button>
+                </form>
+
+                <p id="feedback"></p>
+
+                <hr>
+                <h3>Vorhandene Kinosäle:</h3>
+                <ul id="saal-liste">
+                    <li>Lade Daten...</li>
+                </ul>
+            </div>
+
+            <div id="kunde-controls" style="display: none;">
+    <h2>Aktuelles Kino-Programm</h2>
+    <p>Wähle einen Film aus, um Tickets zu reservieren.</p>
+
+    <div class="programm-liste">
+        <div class="film-karte">
+            <div class="infos">
+                <span class="titel">Der Pate</span>
+                <span class="zeit">Saal 1 | 20:00 Uhr</span>
+            </div>
+            <button class="ticket-btn">Plätze wählen</button>
+        </div>
+
+        <div class="film-karte">
+            <div class="infos">
+                <span class="titel">Star Wars</span>
+                <span class="zeit">Saal 2 | 21:30 Uhr</span>
+            </div>
+            <button class="ticket-btn">Plätze wählen</button>
+        </div>
+    </div>
+
+    <div id="reservierung" class="hidden-box">
+        <h3>Reservierung abschließen</h3>
+        <form id="form-reservierung">
+            <div class="input-group">
+                <label>Dein Name:</label>
+                <input type="text" name="kundenName" placeholder="Max Mustermann">
+            </div>
+            
+            <div class="input-group">
+                <label>Anzahl Tickets:</label>
+                <input type="number" name="anzahl" min="1" max="10" value="1">
+            </div>
+
+            <button type="submit" class="senden-button">Jetzt reservieren</button>
+        </form>
+    </div>
+</div>
+        </div>
+    </main>
+
+    <script src="bundle.js"></script>
+</body>
+
+</html>
