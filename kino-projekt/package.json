@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node server/src/app.mjs",
-    "clean": "rimraf webapp/dist",
+    "clean": "rimraf webapp/dist && rimraf node_modules",
     "lint": "semistandard --verbose | snazzy",
     "mkdir:dist": "node -e \"const fs = require('fs'); if (!fs.existsSync('webapp/dist')) fs.mkdirSync('webapp/dist', { recursive: true });\"",
     "copy:html": "node -e \"const fs = require('fs'); fs.copyFileSync('webapp/src/index.html', 'webapp/dist/index.html');\"",
